@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    height: 100vh;
+}
+
+.App {
+    display: flex;
+    height: 100vh;
+    background-color: #ffffff;
+    /*padding: 20px;*/
+    /*border-radius: 8px;*/
+}
+
+.sidebar {
+    /*border: 3px solid slateblue;*/
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 250px;
+    max-width: 20%;
+    padding: 20px;
+    padding-top: 50px;
+    border-right: 1px solid #c7c9c8;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+}
+
+.side_input {
+    padding: 5px;
+    border: 1px solid #c7c9c8;
+    border-radius: 4px;
+    margin: 5px 0px;
+    width: 200px;
+    /*text-align: center;*/
+}
+
+.but_side {
+    padding: 5px 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #b5e8aa;
+    color: #2f332f;
+    cursor: pointer;
+    width: 100px;
+}
+
+.but_side:hover {
+    background-color: #7fd073;
+}
+
+
+.ul_side {
+    list-style: none;
+    /*background-color: #218838;*/
+}
+
+.li_side {
+    margin: 10px 10px;
+    text-decoration: none;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 3px solid chocolate;*/
+    width: 100%;
+}
+
+.day_list {
+    /*border: 3px solid yellowgreen;*/
+    /*width: 50%;*/
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    margin: 5px;
+}
+
+form {
+    margin: 5px;
+    display: flex;
+    margin-bottom: 20px;
+    /*border: 3px solid green;*/
+}
+
+form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #c7c9c8;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #b5e8aa;
+    color: #2f332f;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #7fd073;
+}
+
+.task_list {
+    list-style-type: none;
+    padding: 2px;
+    /*border: 3px solid lightcoral;*/
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+    margin: 5px;
+    padding-bottom: 5px;
+}
+
+.checkbox_task {
+    display: none; /* Скрываем стандартный чекбокс */
+}
+
+.checkbox_task + label {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    user-select: none; /* Отключаем выделение текста */
+    position: relative;
+    /*border: 3px solid slateblue;*/
+    width: 100%;
+    margin-right: 10px;
+}
+
+.checkbox_task + label::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border: 2px solid #b4b4b4;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-right: 10px; /* Отступ между чекбоксом и текстом */
+}
+
+.checkbox_task:checked + label::before {
+    background-color: #90EE90; /* Салатовый цвет */
+    border-color: #90EE90;
+}
+
+.checkbox_task:checked + label::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 45%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 6px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+}
+
+.delete_but {
+    background-color: #F58484;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 0px 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete_but:hover {
+    background-color: #dc3545;
+}
+
+
+a {
+    color: inherit; /* Наследует цвет текста от родительского элемента */
+    text-decoration: none; /* Убирает подчеркивание */
+    cursor: default; /* Убирает изменение курсора при наведении */
+}
+
+a:hover {
+    color: inherit; /* Наследует цвет текста от родительского элемента при наведении */
+    text-decoration: none; /* Убирает подчеркивание при наведении */
+    cursor: pointer;
+}
+
+a:visited {
+    color: inherit;/* Наследует цвет текста от родительского элемента для посещенных ссылок */
+}
+
+a:active {
+    color: inherit;/* Наследует цвет текста от родительского элемента при активации */
+}
+
+
+
+
