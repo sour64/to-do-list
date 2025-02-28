@@ -41,7 +41,7 @@ body {
     /*text-align: center;*/
 }
 
-.but_side {
+.add_day_button {
     padding: 5px 5px;
     border: none;
     border-radius: 5px;
@@ -55,7 +55,6 @@ body {
     background-color: #7fd073;
 }
 
-
 .ul_side {
     list-style: none;
     /*background-color: #218838;*/
@@ -66,18 +65,28 @@ body {
     text-decoration: none;
 }
 
+.li_side:hover {
+    background: #3414;
+}
+
+.li_side.selected {
+    background-color: rgba(23, 190, 187, 0.2);
+}
+
 .content {
     display: flex;
     align-items: center;
     justify-content: center;
     /*border: 3px solid chocolate;*/
     width: 100%;
+    /*background: white;*/
 }
 
 .day_list {
     /*border: 3px solid yellowgreen;*/
     /*width: 50%;*/
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    /*background: #3414;*/
 }
 
 h2 {
