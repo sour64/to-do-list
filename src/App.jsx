@@ -81,6 +81,9 @@ const App = () => {
         const updatedDays = days.filter((day) => day.id !== dayId);
         setDays(updatedDays);
     };
+
+
+
     return (
         <Router>
             <div className="App">

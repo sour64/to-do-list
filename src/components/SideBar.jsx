@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+// import {countCompleted} from "./TaskList";
 
 const SideBar = ({ days, addDay, deleteDay}) => {
     const [selectedDay, setSelectedDay] = useState(null);
@@ -23,6 +24,12 @@ const SideBar = ({ days, addDay, deleteDay}) => {
         }
     };
 
+    const countCompletedTasks = (day) => {
+        return day.tasks ? day.tasks.filter(task => task.completed).length : 0;
+    }
+
+
+
     return (
         <div className="sidebar">
             <input
@@ -36,12 +43,30 @@ const SideBar = ({ days, addDay, deleteDay}) => {
             <button className={"add_day_button"} onClick={handleAddDay}>add a day</button>
             <ul className={"ul_side"}>
                 {days.map((day) => (
+                    <Link to={`/day/${day.id}`}>
                     <li
                         className={`li_side ${selectedDay?.id === day.id ? 'selected' : ''}`}
                         key={day.id}
                         onClick={()=> selectDay(day)}
                     >
-                        <Link to={`/day/${day.id}`}>{day.name}</Link>
+
+                            <div className="day-info">
+                                {day.tasks && day.tasks.length > 0 && (
+                                    <span className={`completed-counter-sidebar 
+                                ${countCompletedTasks(day) === day.tasks.length
+                                        ? 'full'
+                                        : ''
+                                    }`}>
+                                    {countCompletedTasks(day)}/{day.tasks.length}
+                                        {countCompletedTasks(day) === day.tasks.length && day.tasks.length > 0 && (
+                                            <span className="check-icon"> ✓</span>
+                                        )}
+                                </span>
+                                )}
+                                {/*<Link to={`/day/${day.id}`}>{day.name}</Link>*/}
+                                <div>{day.name}</div>
+                            </div>
+
                         <button
                             className="delete_but"
                             onClick={(e) => {
@@ -52,6 +77,7 @@ const SideBar = ({ days, addDay, deleteDay}) => {
                             delete
                         </button>
                     </li>
+                    </Link>
                 ))}
             </ul>
         </div>

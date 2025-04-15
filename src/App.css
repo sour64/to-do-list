@@ -20,7 +20,8 @@ body {
 
 .sidebar {
     /*border: 3px solid slateblue;*/
-    height: 100vh;
+    /*height: 100vh;*/
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,10 +36,10 @@ body {
 .side_input {
     padding: 5px;
     border: 1px solid #c7c9c8;
-    border-radius: 4px;
+    border-radius: 5px;
     margin: 5px 0px;
     width: 200px;
-    /*text-align: center;*/
+    text-align: center;
 }
 
 .add_day_button {
@@ -51,7 +52,7 @@ body {
     width: 100px;
 }
 
-.but_side:hover {
+.add_day_button:hover {
     background-color: #7fd073;
 }
 
@@ -61,16 +62,48 @@ body {
 }
 
 .li_side {
-    margin: 10px 10px;
+    /*margin: 10px 10px;*/
     text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+    margin: 5px;
+    padding: 5px 0px 5px 5px;
+    border-radius: 5px;
 }
 
 .li_side:hover {
-    background: #3414;
+    border-radius: 5px;
+    background-color: rgba(1, 255, 1, 0.1);
 }
 
 .li_side.selected {
     background-color: rgba(23, 190, 187, 0.2);
+    /*background: #e8f5e9; !* светло-зеленый фон *!*/
+    border-radius: 5px;
+    /*background-color: rgba(212, 243, 203);*/
+    /*background-color: rgba(1, 244, 1, 0.2);*/
+}
+
+.day-info {
+    display: flex;
+    align-items: center;
+    /*gap: 10px;*/
+}
+
+.completed-counter-sidebar {
+    font-size: 0.8em;
+    padding: 2px 6px;
+    border-radius: 10px;
+    /*margin-bottom: 5px;*/
+    background-color: rgba(111, 111, 111, 0.1);
+    /*color: #2e7d32; !* темно-зеленый текст *!*/
+}
+
+.completed-counter-sidebar.full{
+    background: #e8f5e9; /* светло-зеленый фон */
+    color: #2e7d32; /* темно-зеленый текст */
 }
 
 .content {
@@ -87,6 +120,8 @@ body {
     /*width: 50%;*/
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     /*background: #3414;*/
+    padding: 5px;
+    border-radius: 10px;
 }
 
 h2 {
@@ -97,15 +132,16 @@ h2 {
 form {
     margin: 5px;
     display: flex;
-    margin-bottom: 20px;
     /*border: 3px solid green;*/
 }
 
 form input[type="text"] {
-    padding: 10px;
+    padding: 0px 10px;
     border: 1px solid #c7c9c8;
-    border-radius: 4px;
+    border-radius: 5px;
+    flex-grow: 1; /* Занимает всё доступное пространство */
     margin-right: 10px;
+    text-align: center;
 }
 
 form button {
@@ -115,11 +151,24 @@ form button {
     background-color: #b5e8aa;
     color: #2f332f;
     cursor: pointer;
+    flex-shrink: 0; /* Предотвращает сжатие кнопки */
 }
 
 form button:hover {
     background-color: #7fd073;
 }
+
+.completed-counter {
+    padding: 8px 12px;
+    background: #e8f5e9; /* светло-зеленый фон */
+    color: #2e7d32; /* темно-зеленый текст */
+    border-radius: 5px;
+    /*margin-bottom: 10px;*/
+    margin: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
 
 .task_list {
     list-style-type: none;
@@ -128,12 +177,17 @@ form button:hover {
 }
 
 .task {
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #ccc;
     align-items: center;
     margin: 5px;
-    padding-bottom: 5px;
+    padding: 5px;
+}
+
+.task:hover {
+    background-color: rgba(1, 255, 1, 0.1);
 }
 
 .checkbox_task {
@@ -157,7 +211,7 @@ form button:hover {
     width: 15px;
     height: 15px;
     border: 2px solid #b4b4b4;
-    border-radius: 4px;
+    border-radius: 5px;
     background-color: #fff;
     transition: background-color 0.3s, border-color 0.3s;
     margin-right: 10px; /* Отступ между чекбоксом и текстом */
@@ -194,7 +248,6 @@ form button:hover {
     background-color: #dc3545;
 }
 
-
 a {
     color: inherit; /* Наследует цвет текста от родительского элемента */
     text-decoration: none; /* Убирает подчеркивание */
@@ -214,6 +267,9 @@ a:visited {
 a:active {
     color: inherit;/* Наследует цвет текста от родительского элемента при активации */
 }
+
+
+
 
 
 
