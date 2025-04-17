@@ -159,16 +159,57 @@ form button:hover {
 }
 
 .completed-counter {
-    padding: 8px 12px;
+    display: flex;
+    padding: 0px 12px;
     background: #e8f5e9; /* светло-зеленый фон */
     color: #2e7d32; /* темно-зеленый текст */
     border-radius: 5px;
     /*margin-bottom: 10px;*/
     margin: 5px;
     font-size: 14px;
-    text-align: center;
+    /*text-align: center;*/
+    align-items: center;
+    justify-content: space-between;
 }
 
+/* Стили для кругового прогресс-индикатора */
+.circular-progress {
+    /*border: 3px solid slateblue;*/
+    position: relative;
+    width: 50px;
+    height: 50px;
+    /*margin: 0 auto;*/
+}
+
+.progress-ring {
+    /*border: 3px solid crimson;*/
+    transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+    stroke: #e0e0e0;
+}
+
+/*.progress-ring-circle--fill {*/
+/*    transition: stroke-dashoffset 0.8s ease-out ;*/
+/*}*/
+
+.progress-ring-circle--fill {
+    transition:
+            stroke-dashoffset 0.6s ease-out,
+            stroke 0.6s linear;
+}
+
+.progress-text {
+    /*border: 3px solid slateblue;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    /*font-weight: bold;*/
+    /*color: #333;*/
+}
 
 .task_list {
     list-style-type: none;
@@ -267,7 +308,6 @@ a:visited {
 a:active {
     color: inherit;/* Наследует цвет текста от родительского элемента при активации */
 }
-
 
 
 

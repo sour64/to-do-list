@@ -11,9 +11,8 @@ const DayList = ({ days, addTask, toggleComplete, deleteTask }) => {
         return <div>Day not found</div>;
     }
 
-
     return (
-        <div className={"day_list"}>
+        <div className="day_list">
             <h2>{day.name}</h2>
             <AddTask addTask={(task) => addTask(id, task)} />
             <TaskList

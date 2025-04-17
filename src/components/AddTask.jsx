@@ -1,6 +1,6 @@
-import React,{useState} from "react";
+import React, { useState } from 'react';
 
-const AddTask = ({addTask}) => {
+const AddTask = ({ addTask }) => {
     const [text, setText] = useState('');
 
     const onSubmit = (e) => {
@@ -16,12 +16,12 @@ const AddTask = ({addTask}) => {
     return (
         <form onSubmit={onSubmit}>
             <input
-                type={'text'}
-                placeholder={'task name'}
+                type="text"
+                placeholder="task name"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
             />
-            <button type={'submit'}>add a task</button>
+            <button type="submit">add a task</button>
         </form>
     );
 };

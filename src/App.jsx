@@ -20,26 +20,23 @@ const App = () => {
     };
 
     const addTask = (dayId, task) => {
-        // Создаем новую задачу с уникальным идентификатором
         const newTask = { id: uuidv4(), ...task };
 
-        // Обновляем массив дней
         const updatedDays = days.map((day) => {
-            // Если текущий день совпадает с dayId, добавляем новую задачу
             if (day.id === dayId) {
                 return {
                     ...day,
                     tasks: [...day.tasks, newTask]
                 };
             }
-            // Если не совпадает, возвращаем день без изменений
             return day;
         });
-        console.log(updatedDays)
+
         setDays(updatedDays);
     };
 
     const toggleComplete = (dayId, taskId) => {
+
         const updatedDays = days.map((day) => {
             if (day.id === dayId) {
                 const updatedTasks = day.tasks.map((task) => {
@@ -82,22 +79,27 @@ const App = () => {
         setDays(updatedDays);
     };
 
-
-
     return (
         <Router>
             <div className="App">
-                <SideBar days={days} addDay={addDay} deleteDay={deleteDay}/>
+                <SideBar
+                    days={days}
+                    addDay={addDay}
+                    deleteDay={deleteDay}
+                />
                 <div className="content">
                     <Routes>
-                        <Route path="/day/:id" element={
-                            <DayList
-                                days={days}
-                                addTask={addTask}
-                                toggleComplete={toggleComplete}
-                                deleteTask={deleteTask}
-                            />
-                        } />
+                        <Route
+                            path="/day/:id"
+                            element={
+                                <DayList
+                                    days={days}
+                                    addTask={addTask}
+                                    toggleComplete={toggleComplete}
+                                    deleteTask={deleteTask}
+                                />
+                            }
+                        />
                     </Routes>
                 </div>
             </div>
